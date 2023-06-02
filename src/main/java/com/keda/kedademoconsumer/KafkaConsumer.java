@@ -9,8 +9,9 @@ public class KafkaConsumer {
 
 
   @KafkaListener(topics = "${kafka.topic}", groupId = "${kafka.consumer-group-id}")
-  public void handle(String message) {
-    System.out.println("Consumed a message : " + message);
+  public void handle(String message) throws InterruptedException {
+    int delay = Integer.parseInt(message);
+    Thread.sleep(delay);
   }
 
 }
