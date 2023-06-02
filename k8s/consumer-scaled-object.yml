@@ -18,6 +18,26 @@ spec:
         consumerGroup: my-kafka-consumer-group
         topic: keda-demo-topic
         lagThreshold: "10"
-        sasl: plaintext
-        username: SASL_USERNAME
-        password: SASL_PASSWORD
+        offsetRestPolicy: latest
+        sasl: "plaintext"
+        authenticationRef:
+          name: keda-kafka-credentials
+
+---
+
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: keda-trigger-auth-kafka-credential
+  namespace: default
+spec:
+  secretTargetRef:
+
+    - parameter: username
+      name: api-secrets
+      key: api_key
+    - parameter: password
+      name: api-secrets
+      key: api_secret
+
+
