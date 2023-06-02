@@ -14,7 +14,6 @@ spec:
   triggers:
     - type: kafka
       metadata:
-        bootstrapServers: pkc-n3603.us-central1.gcp.confluent.cloud:9092
         consumerGroup: my-kafka-consumer-group
         topic: keda-demo-topic
         lagThreshold: "10"
@@ -39,5 +38,8 @@ spec:
     - parameter: password
       name: api-secrets
       key: api_secret
+    - parameter: bootstrapServers
+      name: api-secrets
+      key: bootstrap_server
 
 
