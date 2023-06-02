@@ -7,14 +7,17 @@ metadata:
     deploymentName: consumer-deployment
 spec:
   scaleTargetRef:
-    deploymentName: consumer-deployment
+    name: consumer-deployment
   pollingInterval: 5
   minReplicaCount: 1
   maxReplicaCount: 10  # Max can go upto num of partitions you have in the topic
   triggers:
     - type: kafka
       metadata:
-        brokerList: pkc-n3603.us-central1.gcp.confluent.cloud:9092
+        bootstrapServers: pkc-n3603.us-central1.gcp.confluent.cloud:9092
         consumerGroup: my-kafka-consumer-group
         topic: keda-demo-topic
         lagThreshold: "10"
+        sasl: plaintext
+        username: SASL_USERNAME
+        password: SASL_PASSWORD
