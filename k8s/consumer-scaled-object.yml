@@ -20,6 +20,7 @@ spec:
         lagThreshold: "10"
         offsetRestPolicy: latest
         sasl: "plaintext"
+        tls: "enabled"
       authenticationRef:
         name: keda-kafka-credentials
 
