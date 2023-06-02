@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: consumer
-          image: kaysush/keda-consumer:0.0.1
+          image: kaysush/keda-consumer:0.1
