@@ -38,4 +38,7 @@ spec:
             - name: KAFKA_TOPIC
               value: "keda-demo-topic"
             - name: BOOTSTRAP_SERVER
-              value: pkc-n3603.us-central1.gcp.confluent.cloud:9092
+              valueFrom:
+                secretKeyRef:
+                  name: api-secrets
+                  key: bootstrap_server
