@@ -24,3 +24,18 @@ spec:
             limits:
               memory: "2Gi"
               cpu: "1000m"
+          env:
+            - name: SR_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-secrets
+                  key: api_key
+            - name: SR_API_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: api-secrets
+                  key: api_secret
+            - name: KAFKA_TOPIC
+              value: "keda-demo-topic"
+            - name: BOOTSTRAP_SERVER
+              value: pkc-n3603.us-central1.gcp.confluent.cloud:9092
