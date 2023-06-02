@@ -17,6 +17,7 @@ spec:
       containers:
         - name: consumer
           image: kaysush/keda-kafka-consumer:0.1
+          imagePullPolicy: Always
           resources:
             requests:
               memory: "1Gi"
