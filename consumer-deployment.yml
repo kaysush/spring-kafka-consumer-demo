@@ -17,3 +17,10 @@ spec:
       containers:
         - name: consumer
           image: kaysush/keda-consumer:0.1
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "500m"
+            limits:
+              memory: "4Gi"
+              cpu: "1000m"
