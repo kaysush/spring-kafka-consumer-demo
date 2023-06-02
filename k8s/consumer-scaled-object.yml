@@ -28,7 +28,7 @@ spec:
 apiVersion: keda.sh/v1alpha1
 kind: TriggerAuthentication
 metadata:
-  name: keda-trigger-auth-kafka-credential
+  name: keda-kafka-credentials
   namespace: default
 spec:
   secretTargetRef:
