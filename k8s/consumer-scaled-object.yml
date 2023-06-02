@@ -15,6 +15,7 @@ spec:
     - type: kafka
       metadata:
         consumerGroup: my-kafka-consumer-group
+        bootstrapServers: pkc-n3603.us-central1.gcp.confluent.cloud:9092
         topic: keda-demo-topic
         lagThreshold: "10"
         offsetRestPolicy: latest
@@ -38,8 +39,5 @@ spec:
     - parameter: password
       name: api-secrets
       key: api_secret
-    - parameter: bootstrapServers
-      name: api-secrets
-      key: bootstrap_server
 
 
