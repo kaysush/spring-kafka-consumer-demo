@@ -21,7 +21,7 @@ spec:
         offsetRestPolicy: latest
         sasl: "plaintext"
       authenticationRef:
-      name: keda-kafka-credentials
+        name: keda-kafka-credentials
 
 ---
 
