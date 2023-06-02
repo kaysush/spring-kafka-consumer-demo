@@ -19,8 +19,8 @@ spec:
         topic: keda-demo-topic
         lagThreshold: "10"
         offsetRestPolicy: latest
-        sasl: "plaintext"
-        tls: "enabled"
+        sasl: plaintext
+        tls: enable
       authenticationRef:
         name: keda-kafka-credentials
 
